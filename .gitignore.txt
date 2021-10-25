@@ -1,0 +1,3 @@
+ques_1/build/
+ques_2/build/
+ques_3/build/

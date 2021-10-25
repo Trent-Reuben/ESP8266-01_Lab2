@@ -1,0 +1,12 @@
+**Written using Notepad
+_________________________________________________________________________________________
+Reference: 
+https://freertos.org/fr-content-src/uploads/2018/07/FreeRTOS_Reference_Manual_V10.0.0.pdf
+
+Section 2.6 - xTaskCreate()
+Parameter: uxPriority
+_________________________________________________________________________________________
+
+Discussion: 
+
+With regards to the performance of the tasks when varying uxPriority, it was seen that the task executed according the value of the priority whereby the highest priority task executed first and the other tasks followed, executing in descending order. This is expected given uxPriority defines the order in which the tasks will execute thus priorities are set between 0  to -1 which is the highest prority.  

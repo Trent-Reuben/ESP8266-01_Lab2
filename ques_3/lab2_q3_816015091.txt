@@ -1,0 +1,16 @@
+Edited using: Notepad
+____________________________________________________________________________
+References:
+Idle Hook task: 
+	https://www.freertos.org/RTOS-idle-task.html
+
+configIDLE_SHOULD_YIELD
+	https://www.freertos.org/a00110.html
+
+ESP system sleep modes API reference
+	https://docs.espressif.com/projects/esp8266-rtos-sdk/en/latest/api-reference/system/sleep_modes.html?highlight=esp_sleep
+____________________________________________________________________________
+
+Discussion: 
+
+The use of the processor sleep does affect the performance given as the tasks executed, there was a pause in the execution of the tasks. This indicated that when the system went into idle, for the set 0.5s, the idle task executed this there was a brief pause seen. This is expected given according to the idle hook task definition, it is a function that is called during each cycle of the idle task. Thus an idle of 0.5s was experienced by the system as it performed. Within the “vApplicationIdleHook”, the wakeup by timer was enable allowing for the used of “esp_light_sleep_start()” which made the system enter a light sleep due the configured wake up option ins “esp_sleep_enable_timer_wakeup”.
